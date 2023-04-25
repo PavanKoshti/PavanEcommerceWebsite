@@ -8,12 +8,12 @@
             <div class="col-lg-9 col-md-8 col-sm-7">
               <div class="c-section a-spacing-top-base">
                 <div class="a-row sc-cart-header sc-compact-bottom">
-                  <h2>Shopping Cart</h2>
+                  <h2>Shopping Cart Pavan</h2>
                 </div>
                 <form action="#" method="post">
                   <div class="sc-list-head">
                     <div class="text-right a-spacing-top-micro">
-                      <span class="a-color-secondary">Price</span>
+                      <span class="a-color-secondary">Price Pavan</span>
                     </div>
                   </div>
                   <!-- List of the item -->
