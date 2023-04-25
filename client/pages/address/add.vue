@@ -82,13 +82,13 @@
                                     <!-- Zip Code -->
                                     <div class="a-spacing-top-medium">
                                         <label style="margin-bottom: 0px;">Zip Code</label>
-                                        <input type="text" class="a-input-text" style="width: 100%;" v-model="zipCode" />
+                                        <input type="text" class="a-input-text" style="width: 100%;" v-model="zipCode" maxlength="6" minlength="6" />
                                     </div>
                                     <!-- Phone Number -->
                                     <div class="a-spacing-top-medium">
                                         <label style="margin-bottom: 0px;">Phone Number</label>
                                         <input type="text" class="a-input-text" style="width: 100%;"
-                                            v-model="phoneNumber" />
+                                            v-model="phoneNumber" maxlength="10" minlength="10" />
                                         <div class="a-section a-spacing-none a-spacing-top-micro">
                                             <span class="a-size-mini">May be used to assist delivery</span>
                                         </div>
@@ -140,7 +140,7 @@
                                     <div class="a-spacing-top-large">
                                         <span class="a-button-register">
                                             <span class="a-button-inner">
-                                                <span class="a-button-text" @click="onAddAddress">Add address</span>
+                                                <span class="a-button-text" @click="onAddAddress()">Add address</span>
                                             </span>
                                         </span>
                                     </div>
@@ -203,9 +203,11 @@ export default {
 
                 let response = await this.$axios.$post("api/addresses", data);
 
-                if (response.success) {
-                    this.$router.push("/");
-                    // this.$router.push("/address");
+                if (response.success == true) {
+                    this.$router.push("/address");
+                }
+                else {
+                    console.log("Error While Add Address >>>");
                 }
             } catch (err) {
                 console.log("Error While Add Address Catch >>>", err);
