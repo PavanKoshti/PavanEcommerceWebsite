@@ -246,7 +246,7 @@
                                 </div>
 
                                 <div class="a-section">
-                                    <div class="a-button-stack" @click="addProductToCart(product)">
+                                    <div class="a-button-stack" @click="addProductToCart(singleProduct)">
                                         <span class="a-spacing-small a-button-primary a-button-icon">
                                             <span class="a-button-inner">
                                                 <i class="a-icon a-icon-cart"></i>
@@ -351,6 +351,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import ReviewSection from '../../components/ReviewSection.vue'
 import StarRating from "vue-star-rating";
 export default {
@@ -370,6 +371,8 @@ export default {
        await this.singleProductManyReviews()
     },
     methods : {
+
+        ...mapActions(["addProductToCart"]),
 
         async onGetSingleProduct() {
             try {

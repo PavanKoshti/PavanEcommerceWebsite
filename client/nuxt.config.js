@@ -4,6 +4,9 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'client',
+    script : [{
+      src : "https://js.stripe.com/v3"
+    }],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -23,6 +26,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: "~/plugins/localStorage.js", ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -47,12 +51,12 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    Proxy : true,
+    Proxy: true,
     baseURL: URL,
   },
 
-  Proxy : {
-    "/api" : URL
+  Proxy: {
+    "/api": URL
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -65,16 +69,16 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
-  auth : {
-      strategies : {
-        local : {
-          endpoints : {
-            login : {
-              propertyName : "token"
-            },
-            logout : true
-          }
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            propertyName: "token"
+          },
+          logout: true
         }
       }
+    }
   }
 }

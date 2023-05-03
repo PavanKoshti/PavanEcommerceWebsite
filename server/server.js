@@ -41,6 +41,12 @@ app.use("/api", reviewRoutes)
 const addresRoutes = require('./routes/address')
 app.use("/api", addresRoutes)
 
+const paymentRoutes = require('./routes/payment')
+app.use("/api", paymentRoutes)
+
+const orderRoutes = require('./routes/order')
+app.use("/api", orderRoutes)
+
 app.listen(4700, (err) => {
     if (err) {
         console.log("err", err);
